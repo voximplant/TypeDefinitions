@@ -688,7 +688,7 @@ declare module VoxImplant {
 		*	@param successCallback A function called in case of successful audio recording device change
 		*	@param failedCallback A function called in case of problems while changing audio recording device
 		*/
-		attachRecordingDevice(successCallback?: (any) => any, failedCallback?: (any) => any);
+		attachRecordingDevice(successCallback?: () => any, failedCallback?: () => any): void;
 		/**
 		*	Get a list of all currently available audio sources / microphones
 		*/
@@ -777,7 +777,7 @@ declare module VoxImplant {
 		*	@param eventName Event name
 		*	@param eventHandler Handler function
 		*/
-		removeEventListener(eventName: string, eventHandler: (any) => any): void;
+		removeEventListener(eventName: string, eventHandler: () => any): void;
 		/**
 		*	Remove roster item (IM)
 		*
@@ -809,7 +809,6 @@ declare module VoxImplant {
 		*
 		*	@param user_id User id
 		*	@param content Message content
-		*	@return message id
 		*/
 		sendInstantMessage(user_id: string, content: string): string;
 		/**
@@ -886,7 +885,7 @@ declare module VoxImplant {
 		*	@param successCallback Success callback function
 		*	@param failedCallback Failed callback function
 		*/
-		setVideoSettings(settings: VideoSettings | FlashVideoSettings, successCallback?: (any) => any, failedCallback?: (any) => any): void;
+		setVideoSettings(settings: VideoSettings | FlashVideoSettings, successCallback?: () => any, failedCallback?: () => any): void;
 		/**
 		*	Show flash settings panel
 		*	
@@ -917,7 +916,7 @@ declare module VoxImplant {
 		*	@param successCallback Called in WebRTC mode if audio source changed successfully
 		*	@param failedCallback Called in WebRTC mode if audio source couldn't be changed successfully
 		*/
-		useAudioSource(id: number | string, successCallback?: (any) => any, failedCallback?: (any) => any): void;
+		useAudioSource(id: number | string, successCallback?: () => any, failedCallback?: () => any): void;
 		/**
 		*	Use specified audio source , use audioSources to get the list of available audio sources
 		*
@@ -925,7 +924,7 @@ declare module VoxImplant {
 		*	@param successCallback Called in WebRTC mode if video source changed successfully
 		*	@param failedCallback Called in WebRTC mode if video source couldn't be changed successfully
 		*/
-		useVideoSource(id: number | string, successCallback?: (any) => any, failedCallback?: (any) => any): void;
+		useVideoSource(id: number | string, successCallback?: () => any, failedCallback?: () => any): void;
 		/**
 		*	Get a list of all currently available video sources / cameras
 		*/
@@ -950,7 +949,7 @@ declare module VoxImplant {
 		*	@param customData Set custom string associated with call session. It can be later obtained from Call History using HTTP API
 		*	@param extraHeaders Optional custom parameters (SIP headers) that should be sent after accepting incoming call. Parameter names must start with "X-" to be processed by application 
 		*/
-		answer(customData: string, extraHeaders?: Object): void;
+		answer(customData?: string, extraHeaders?: Object): void;
 		/**
 		*	Reject incoming call
 		*
@@ -1003,7 +1002,7 @@ declare module VoxImplant {
 		*	@param eventName Event name
 		*	@param eventHandler Handler function
 		*/
-		removeEventListener(eventName: string, eventHandler: (any) => any): void;
+		removeEventListener(eventName: string, eventHandler: () => any): void;
 		/**
 		*	Send Info (SIP INFO) message inside the call
 		*
@@ -1045,7 +1044,7 @@ declare module VoxImplant {
 		*	@param successCallback Called in WebRTC mode if video settings were applied successfully
 		*	@param failedCallback Called in WebRTC mode if video settings couldn't be applied
 		*/
-		setVideoSettings(settings: VideoSettings | FlashVideoSettings, successCallback?: (any) => any, failedCallback?: (any) => any): void;
+		setVideoSettings(settings: VideoSettings | FlashVideoSettings, successCallback?: () => any, failedCallback?: () => any): void;
 		/**
 		*	Show/hide remote party video
 		*
